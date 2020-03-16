@@ -1,0 +1,25 @@
+form{
+	margin-left: 100px;
+	margin-right: 100px;
+	
+
+
+}
+h2 {
+    margin: .67em 0;
+    display: block;
+    font-size: 2em;
+   
+    font-weight: bold;
+}
+}
+
+
+   @media (min-width: 37.5em){
+   	form{
+   	margin-left: 10px;
+	margin-right: 10px;
+	
+
+   	}
+   }
