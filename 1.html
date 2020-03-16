@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Moscio</title>
+<link rel="shortcut icon" href="favicon.png" type="image/png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+ 
+
+  <link href="css/style.css" rel="stylesheet">
+  
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar    navbar-expand-lg navbar-dark bg-black black sticky-top scrolling-navbar">
+      <div class="container">
+        <a href="index.html" class="navbar-brand">M</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCotent" aria-controls="navbarCotent" aria-expanded="false" aria-label="Toggle Navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCotent">
+          <ul class="navbar-nav mr-auto smooth-scroll">
+            <li class="nav-item">
+              <a href="products.html" class="nav-link waves-effect waves-light">PRODUCTS</a>
+            </li>
+            <li class="nav-item">
+              <a href="#beast-features" class="nav-link waves-effect waves-light">HOW TO</a>
+            </li>
+            <li class="nav-item">
+              <a href="search.html" class="nav-link waves-effect waves-light">
+                <i class="fa fa-search"></i></a>
+            </li>
+          
+          </ul>
+
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="#" class="nav-link waves-effect waves-light">
+                <i class="fa fa-map-marker"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="login.html" class="nav-link waves-effect waves-light">
+                <i class="fa fa-user"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link waves-effect waves-light">
+                <i class="fa fa-heart"></i>
+              </a>
+            </li>
+            
+                          
+            <div id="cart-info" class="nav-info align-items-center cart-info d-flex justify-content-between mx-lg-5 waves-effect waves-light  white-text">
+              <span class="cart-info__icon mr-lg-3"><i class="fa fa-shopping-cart">
+                </i>  
+              </span>
+            <p class=" color-white mb-0 text-capitalize">
+              <span id="item-count">2 </span> items - $
+              <span class="item-total">10.49</span></p>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+
+
+     
+        </div>
+         <div class="container-fluid">
+      <div class="row max-height justify-content-center align-items-center">
+        <div class="col-10 mx-auto banner text-center">
+          
+
+        </div>
+        <div id="cart" class="cart">
+          <!-- cart item -->
+          <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+            <img src="img-cart/cake-2.jpeg" class="img-fluid rounded-circle" id="item-img" alt="">
+            <div class="item-text">
+
+              <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
+              <span>$</span>
+              <span id="cart-item-price" class="cart-item-price" class="mb-0">10.99</span>
+            </div>
+            <a href="#" id='cart-item-remove' class="cart-item-remove">
+              <i class="fas fa-trash"></i>
+            </a>
+          </div>
+          <!--end of  cart item -->
+          <!-- cart item -->
+          <div class="cart-item d-flex justify-content-between text-capitalize my-3">
+            <img src="img-cart/doughnut-2.jpeg" class="img-fluid rounded-circle" id="item-img" alt="">
+            <div class="cart-item-text">
+
+              <p id="cart-item-title" class="font-weight-bold mb-0">cart item</p>
+              <span>$</span>
+              <span id="cart-item-price" class="cart-item-price" class="mb-0">10.99</span>
+            </div>
+            <a href="#" id='cart-item-remove' class="cart-item-remove">
+              <i class="fas fa-trash"></i>
+            </a>
+          </div>
+          <!--end of  cart item -->
+          <!-- cart total -->
+          <div class="cart-total-container d-flex justify-content-around text-capitalize mt-5">
+            <h5>total</h5>
+            <h5> $ <strong id="cart-total" class="font-weight-bold">10.00</strong> </h5>
+          </div>
+          <!--end cart total -->
+          <!-- cart buttons -->
+          <div class="cart-buttons-container mt-3 d-flex justify-content-between">
+            <a href="#" id="clear-cart" class="btn btn-outline-secondary btn-black text-uppercase">clear cart</a>
+            <a href="#" class="btn btn-outline-secondary text-uppercase btn-pink">checkout</a>
+          </div>
+          <!--end of  cart buttons -->
+          <!--  -->
+        </div>
+      </div>
+    </div>
+
+</header>
+
+
+
+
+  <div class="pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+          <!-- Shopping cart table -->
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="p-2 px-3 text-uppercase">Product</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Price</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Quantity</div>
+                  </th>
+                  <th scope="col" class="border-0 bg-light">
+                    <div class="py-2 text-uppercase">Remove</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="border-0">
+                    <div class="p-2">
+                      <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-1_zrifhn.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Timex Unisex Originals</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
+                      </div>
+                    </div>
+                  </th>
+                  <td class="border-0 align-middle"><strong>$79.00</strong></td>
+                  <div class="col-4 col-sm-4 col-md-4">
+                               
+                  <td class="border-0 align-middle">
+                                       <div class="quantity border-0 align-middle">
+                                              <input type="button" value="+" class="plus" onclick="plus()">
+                                              <input type="number" step="1" max="99" min="1" value="1" id="cheese" class="qty"
+                                                     size="">
+                                              <input type="button" value="-" class="minus" onclick="minus()">
+                                          </div>
+                                      </div>
+                  </td>
+                 <div id="delete" type="btn"> <td  class=" border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                 </div>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="p-2">
+                      <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-3_cexmhn.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Lumix camera lense</a></h5><span class="text-muted font-weight-normal font-italic">Category: Electronics</span>
+                      </div>
+                    </div>
+                  </th>
+                  <td class="align-middle"><strong>$79.00</strong></td>
+                  <td class="border-0 align-middle">
+                                       <div class="quantity border-0 align-middle">
+                                         
+                                              <input type="number" step="1" max="99" min="1" value="1" id="cheese" class="qty"
+                                                     size="2">
+                                              
+                                          </div>
+                                      </div>
+                  </td>
+                  <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div class="p-2">
+                      <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-2_qxjis2.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Gray Nike running shoe</a></h5><span class="text-muted font-weight-normal font-italic">Category: Fashion</span>
+                      </div>
+                    </div>
+                    <td class="align-middle"><strong>$79.00</strong></td>
+                    <td class="border-0 align-middle">
+                                       <div class="quantity border-0 align-middle">
+                                              <input type="button" value="+" class="plus" onclick="plus()">
+                                              <input type="number" step="1" max="99" min="1" value="1" id="cheese" class="qty"
+                                                     size="2">
+                                              <input type="button" value="-" class="minus" onclick="minus()">
+                                          </div>
+                                      </div>
+                  </td>
+                    <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- End -->
+        </div>
+      </div>
+
+      <div class="row py-2 p-2 bg-white rounded shadow-sm">
+        <div class="col-lg-6">
+          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Coupon code</div>
+          <div class="p-4">
+            <p class="font-italic mb-4">If you have a coupon code, please enter it in the box below</p>
+            <div class="input-group mb-4 border rounded-pill p-2">
+              <input type="text" placeholder="Apply coupon" aria-describedby="button-addon3" class="form-control border-0">
+              <div class="input-group-append border-0">
+                <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Apply coupon</button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instructions for seller</div>
+          <div class="p-4">
+            <p class="font-italic mb-4">If you have some information for the seller you can leave them in the box below</p>
+            <textarea name="" cols="30" rows="2" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+          <div class="p-4">
+            <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
+            <ul class="list-unstyled mb-4">
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>$390.00</strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong>$10.00</strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
+              <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                <h5 class="font-weight-bold">$400.00</h5>
+              </li>
+            </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<footer class="page-footer font-small bg-dark black">
+
+ <section class="text-center my-0 justify-content-around bg-dark mb-md-0 mb-5 " >
+
+  <div class="row mb-0 outline-white ">
+
+   
+    <div class="col-md-4 mt-2 mb-2">
+
+      <i class="fa fa-phone fa-3x white-text"></i>
+      <h5 class="font-weight-light my-2 white-text">000-000-000-000-000-000-000</h5>
+    
+
+    </div>
+
+
+    <div class="col-md-4 mt-2 mb-2">
+
+      <i class="fa fa-comments-o fa-3x white-text"></i>
+      <h5 class="font-weight-light my-2 white-text">Live Chat</h5>
+     
+
+    </div>
+
+
+    <div class="col-md-4 mt-2 mb-2">
+<a href="contact us.html">
+      <i class="fa fa-envelope fa-3x white-text"></i>
+      <h5 class="font-weight-light my-2 white-text">Support</h5>
+      </a>
+    </div>
+  
+ 
+  </div>
+
+
+</section>
+
+
+ <section class="text-center my-6 justify-content-around bg-white mb-md-0 mb-2 " >
+
+  <div class="row mb-0 ">
+
+    <div class="col-md-6 mt-5 mb-5">
+<a href="#">
+      <i class="fa fa-dropbox fa-5x black-text"></i>
+      <h5 class="font-weight-bold my-2 black-text">SHIPPING</h5>
+    
+</a>
+    </div>
+   
+
+    
+    <div class="col-md-6 mt-5 mb-5">
+<a href="#">
+      <i class="fa fa-undo fa-5x black-text"></i>
+      <h5 class="font-weight-bold my-2 black-text">RETURNS</h5>
+     </a>
+
+    </div>
+    
+
+
+  </div>
+  
+<hr class="rgba-white-light" style="margin: 0; ">
+</hr>
+</section>
+
+   
+    <div class="container">
+
+   
+      <div class="row text-center d-flex justify-content-center pt-4 mb-2">
+
+       
+        <div class="col-md-2 mb-2">
+          <h6 class="text-uppercase font-weight-light">
+            <a href="abot!">ABOUT US</a>
+          </h6>
+        </div>
+       
+
+        <div class="col-md-2 mb-2">
+          <h6 class="text-uppercase font-weight-light">
+            <a href="#!">PRIVACY POLCY</a>
+          </h6>
+        </div>
+
+
+        <div class="col-md-2 mb-2">
+          <h6 class="text-uppercase font-weight-light">
+            <a href="#!">TERMS&CONDITIONS</a>
+          </h6>
+        </div>
+
+
+        <div class="col-md-2 mb-2">
+          <h6 class="text-uppercase font-weight-light">
+            <a href="contact us.html">SUPPORT</a>
+          </h6>
+        </div>
+
+
+      </div>
+
+      
+
+
+      </div>
+
+     
+<hr class="rgba-white-light" style="margin: 0;"> </hr>
+     
+      <div class="row pb-3">
+
+  
+        <div class="col-md-12">
+
+          <div class="mb-5 flex-center">
+
+       
+            <a class="fb-ic">
+              <i class="fa fa-facebook fa-lg white-text mr-4"> </i>
+            </a>
+        
+            <a class="tw-ic">
+              <i class="fa fa-twitter fa-lg white-text mr-4"> </i>
+            </a>
+        
+            <a class="gplus-ic">
+              <i class="fa fa-google-plus fa-lg white-text mr-4"> </i>
+            </a>
+          
+    
+            <a class="ins-ic">
+              <i class="fa fa-instagram fa-lg white-text mr-4"> </i>
+            </a>
+          
+            <a class="pin-ic">
+              <i class="fa fa-pinterest fa-lg white-text"> </i>
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="footer-copyright text-center py-2">© 2018 Copyright
+    </div>
+
+
+  </footer>
+
+
+
+
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/app.js"></script>
+
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+  <script src="https://use.fontawesome.com/c560c025cf.js"></script>
+</body>
+
+</html>
