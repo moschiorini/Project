@@ -1,20 +1,81 @@
- .cart {
-  position: absolute;
-  min-height: 10rem;
-  background: var(--mainWhite);
-  top: 0;
-  right: 0;
-  transition: all 0.3s ease-in-out;
-  background: rgba(255, 255, 255, 0.5);
-  width: 0;
-  overflow: hidden;
+body{
+	margin: 0px;
 }
-.show-cart {
-  width: 18rem;
-  padding: 2rem 1.5rem;
-  transform: rotateY(-360deg);
+#tovar{
+	display: flex;
+	justify-content:space-around;
+	flex-wrap: wrap;
+	align-content: space-around;
 }
-.cart-item {
-  transition: a ll 2s ease-in-out;
+#filter{
+	display: flex;
 }
-  
+#filter-container{
+	display: flex;
+}
+.btn{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+#menu{
+	height: 50px;
+	margin: 0px;
+	background: lightgreen;
+	width: 100%;
+}
+#sum{
+	margin-left: 10px;
+}
+.dropdown-item{
+	cursor: pointer;
+}
+.tovContainer{
+	margin-top: 30px;
+	margin-left: 50px;
+	margin-right: 50px;
+	width: 200px;
+	height: 300px;
+}
+#img{
+	width: 100%;
+	height: 200px;
+	background: url(http://www.calorizator.ru/sites/default/files/imagecache/product_512/product/bread-46.jpg) no-repeat;
+	background-size: 100%;
+}
+#title{
+	margin-left: 4px;
+	font-size: 20px;
+	font-weight:bold;
+}
+#titleDiv{
+	background-color: #C0C0C0;
+	display: flex;
+	justify-content: space-between;
+}
+#dopDiv{
+	padding: 5px;
+	font-size: 18px;
+	font-weight:bold;
+	background-color: #A9A9A9;
+	display: flex;
+	justify-content: space-between;
+}
+img{
+	width: 60%;
+	margin-left:20%;
+	height: 100px;
+	background: no-repeat;
+	background-size: auto;
+}
+.card-footer{
+	display: flex;
+	justify-content: space-between;
+}
+.modal-content{
+	width: 80%;
+	display: flex;
+	justify-content:space-around;
+	flex-wrap: wrap;
+	align-content: space-around;
+	padding-bottom: 0px;
+}
