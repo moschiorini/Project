@@ -5,56 +5,39 @@
 	<title>Pizza</title>
 </head>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-<link href="css/style.css" rel="stylesheet" type="text/css">
+	  rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link href="css/style.css" rel="stylesheet" type="text/css">
 <body>
-	<nav class="navbar navbar-dark bg-dark black">
-		<div style="display: flex;">
-			<a class="navbar-brand black" href="#">Pizza</a>
-			
-			<div id="filter-container">
-				<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Меню
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
-				</div>
-
-				<div class="dropdown">
-				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Добавки к пицце
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
-				</div>
-				<a  href="#">
-				<i></i>
-				</a>
-
-				<button class="btn btn-secondary" onclick="findFilter('all')">Всё</button>
+<nav class="navbar navbar-dark bg-dark">
+	<div style="display: flex;">
+		<a class="navbar-brand" href="#">Pizza</a>
+		<div id="filter-container">
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Меню
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton"></div>
 			</div>
+
+			<button class="btn btn-secondary" onclick="findFilter('all')">Всё</button>
 		</div>
-		<button class="btn btn-light" onclick="isOnCart()" data-toggle="modal" data-target=".bd-example-modal-lg" style="margin-top: 5px; margin-right: 60px">
-			<i class="material-icons">shopping_cart</i>
-			<a class="navbar-brand black-text" id="sum" href="#">Всего: 0 $</a>
-		</button>
-	</nav>
+	</div>
+	<button class="btn btn-dark" onclick="onCart()" data-toggle="modal" data-target=".bd-example-modal-lg" style="margin-top: 5px; margin-right: 60px">
+		<i class="material-icons">shopping_cart</i>
+		<a class="navbar-brand" id="sum" href="#">Всего: 0 $</a>
+	</button>
+</nav>
 
 <!-- Модальное окно - Корзина -->
 
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-    	<table class="table table-dark"></table>
-    </div>
-  </div>
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<table class="table table-dark"></table>
+		</div>
+	</div>
 </div>
-
-
-
-
-
-
 
 <div id="filter"></div>
 
@@ -64,7 +47,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </html>
-  
- <script src="js/app.js" type="text/javascript"></script>
+
+<script src="js/app.js" type="text/javascript"></script>
 <script src="js/script.js" type="text/javascript">
 </script>

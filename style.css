@@ -1,6 +1,5 @@
 body{
 	margin: 0px;
-	background-color: : black; 
 }
 #tovar{
 	display: flex;
@@ -72,11 +71,11 @@ img{
 	display: flex;
 	justify-content: space-between;
 }
-.modal-content{
+.modal-content {
 	width: 80%;
 	display: flex;
-	justify-content:space-around;
+	justify-content: space-around;
 	flex-wrap: wrap;
 	align-content: space-around;
-	padding-bottom: 0px;
+	padding-bottom: 50px;
 }

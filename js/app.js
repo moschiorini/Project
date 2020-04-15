@@ -1,41 +1,64 @@
+let tovar = null;
+
 window.onload = () => findFilter('all');
 
-const cat = document.getElementById('filter');
-const aa = document.createElement('div');
+fetch('json/content.json')
+    .then(response => response.json())
+    .then(summary => {
+        loadCategory(summary.category);
+
+        initTovar(summary.content);
+    });
+
 const tov = document.getElementById('tovar');
 const sum = document.getElementById('sum');
 const dropMenu = document.getElementsByClassName('dropdown-menu');
 const cart = document.getElementsByClassName('table')[0];
 
 let costSum = 0;
-const category = ["Pizza", "Drinks", "Wrap", "Toppings"];
-const firm = ["Samsung", "Xiaomi", "LG", "Apple", "Vesta"];
 
-const summa = (s) => {
-    costSum += s;
-    sum.innerHTML = `Всего: ${costSum} $`;
-};
+function initTovar(t) {
+    return tovar = t;
+}
 
-for (let tov of category) {
-    let drop = document.createElement('div');
-    drop.innerHTML = `<a class="dropdown-item" onclick=findFilter('${tov}')>${tov}</a>`;
-    dropMenu[0].appendChild(drop);
+function loadCategory(category) {
+    for (let tov of category) {
+        let drop = document.createElement('div');
+        drop.innerHTML = `<a class="dropdown-item" onclick=findFilter('${tov}')>${tov}</a>`;
+        dropMenu[0].appendChild(drop);
+    }
 }
-;
-for (let tov of firm) {
-    let drop = document.createElement('div');
-    drop.innerHTML = `<a class="dropdown-item" onclick=findFilter('${tov}')>${tov}</a>`;
-    dropMenu[1].appendChild(drop);
-}
-;
+
 
 
 const findFilter = (value) => {
-    value = value + '';
     tov.innerHTML = '';
-    console.log('ddddd ', value);
     for (let i = 0; i < tovar.length; i++) {
-        if (value == tovar[i].category || value == tovar[i].firm || value == 'all') {
+
+        var countSource = `<div id="input_div">
+                                <lavel>Порция сыра</lavel><br>
+                                <input type="button" value="+" id="plus" 
+                                onclick="plus(${tovar[i].sir}, ${tovar[i].id}); summaDobavok(${tovar[i].id}, ${tovar[i].sirPrice})">
+                                <input type="text" size="25" value="${tovar[i].sir}" id="count${tovar[i].id}" style="width: 15px">
+                                <input type="button" value="-" id="minus" 
+                                onclick="summaDobavok(${tovar[i].id}, -${tovar[i].sirPrice}); minus(${tovar[i].sir}, ${tovar[i].id})">
+                           </div>`;
+
+        var dough = `<div class="form-check">
+                        <input type="checkbox" ${tovar[i].corj ? 'checked' : ''} 
+                        class="form-check-input" id="doughCheck${tovar[i].id}" 
+                        onclick="checkboxCorj(${tovar[i].corj}, ${tovar[i].id}, ${tovar[i].corjPrice})">
+                        <label class="form-check-label" for="doughCheck${tovar[i].id}">Пышный корж</label>
+                    </div>`;
+
+        var ice = `<div class="form-check">
+                        <input type="checkbox" ${tovar[i].ice ? 'checked' : ''}  
+                        class="form-check-input" id="iceCheck${tovar[i].id}"
+                        onclick="checkboxIce(${tovar[i].ice}, ${tovar[i].id}, ${tovar[i].icePrice})">
+                        <label class="form-check-label" for="doughCheck${tovar[i].id}">Лёд</label>
+                    </div>`;
+
+        if (value === tovar[i].category || value === tovar[i].firm || value === 'all') {
             let tovCont = document.createElement('div');
             tovCont.className = "tovContainer";
             tovCont.innerHTML = `
@@ -53,9 +76,12 @@ const findFilter = (value) => {
 		            <strong>
 		              <p class="black-text" href="">${tovar[i].name} </p>
 		            </strong>
-		          </h4>
-		          
-		          <p class="card-text"> ${tovar[i].category}
+		          </h4>`
+                .concat(tovar[i].category === 'Pizza' ? countSource : '')
+                .concat(tovar[i].corj != null ? dough : '')
+                .concat(tovar[i].ice != null ? ice : '')
+                .concat(
+                    `<p class="card-text"> ${tovar[i].category}
 		          </p>
 		         
 		          <div class="card-footer px-1">
@@ -63,21 +89,20 @@ const findFilter = (value) => {
 		              <strong>${tovar[i].cost}</strong>
 		            </span>
 		            <span class="float-right">
-		              <button onclick="summa(tovar[${i}].cost);tovar[${i}].onCart++" class="btn btn-success" style="margin-top: 5px;">
+		              <button onclick="tovar[${i}].onCart++; summa(tovar[${i}].cost)" class="btn btn-success" style="margin-top: 5px;">
 						<i class="material-icons">shopping_cart</i>
 				 	</button>
 		            </span>
 		          </div>
 		        </div>		
       </div>
-    `;
+    `);
             tov.appendChild(tovCont);
         }
     }
 }
 
-
-const isOnCart = () => {
+const onCart = () => {
     cart.innerHTML = `
 	<thead class="bg-dark ">
                 <tr>
@@ -98,9 +123,7 @@ const isOnCart = () => {
                     <div class="py-2 text-uppercase">Quantity</div>
                   </th>
                 </tr>
-              </thead>
-              
-	`;
+              </thead>`;
     for (let i = 0; i < tovar.length; i++) {
         if (tovar[i].onCart) {
             let tovCont = document.createElement('tr');
@@ -113,4 +136,63 @@ const isOnCart = () => {
             cart.appendChild(tovCont);
         }
     }
+}
+
+const summa = (s) => {
+    sum.innerHTML = `Всего: ${costSum += s} $`;
+}
+
+const summaDobavok = (id, s) => {
+    if (isOnCart(id) && s > 0) {
+        summa(s);
+    } else if (isOnCart(id) && s < 0 && getElement("count"+id).value > 0) {
+        summa(s);
+    }
+}
+
+function plus(count, id) {
+    if (isOnCart(id)) {
+        var el = getElement("count" + id);
+        el.value++;
+    }
+}
+
+function minus(count, id) {
+    var el = getElement("count" + id);
+    if (isOnCart(id) && el.value >= 1) {
+        el.value--;
+    }
+}
+
+function checkboxCorj(checked, id, price) {
+    var el = getElement("doughCheck" + id);
+    if (checked != null && isOnCart(id)) {
+        if (el.checked)
+            summa(price);
+        if (!el.checked)
+            summa(-price);
+    }
+}
+
+function checkboxIce(checked, id, price) {
+    var el = getElement("iceCheck" + id);
+    if (checked != null && isOnCart(id)) {
+        if (el.checked)
+            summa(price);
+        if (!el.checked)
+            summa(-price);
+    }
+}
+
+function isOnCart(id) {
+    for (let i of tovar) {
+        if (i.onCart > 0 && i.id === id) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function getElement(idElement) {
+    return document.getElementById(idElement);
 }
