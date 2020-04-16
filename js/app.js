@@ -37,11 +37,12 @@ const findFilter = (value) => {
 
         var countSource = `<div id="input_div">
                                 <lavel>Порция сыра</lavel><br>
-                                <input type="button" value="+" id="plus" 
-                                onclick="plus(${tovar[i].sir}, ${tovar[i].id}); summaDobavok(${tovar[i].id}, ${tovar[i].sirPrice})">
-                                <input type="text" size="25" value="${tovar[i].sir}" id="count${tovar[i].id}" style="width: 15px">
                                 <input type="button" value="-" id="minus" 
                                 onclick="summaDobavok(${tovar[i].id}, -${tovar[i].sirPrice}); minus(${tovar[i].sir}, ${tovar[i].id})">
+                               
+                                <input type="text" size="25" value="${tovar[i].sir}" id="count${tovar[i].id}" style="width: 15px">
+                                 <input type="button" value="+" id="plus" 
+                                onclick="plus(${tovar[i].sir}, ${tovar[i].id}); summaDobavok(${tovar[i].id}, ${tovar[i].sirPrice})">
                            </div>`;
 
         var dough = `<div class="form-check">
